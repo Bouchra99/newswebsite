@@ -1,0 +1,76 @@
+body{
+    margin: auto;
+    padding: 0;
+    
+}
+
+.header {
+   
+    display: flex;
+    flex-direction: column;
+}
+
+.top{
+    margin-left: 10px;
+    background-color: white ;
+    display: grid;
+    grid-template-columns: 0.25fr 0.5fr 1.5fr 1.5fr 0.5fr;
+    width: 100%;
+   
+    
+   
+}
+
+.bars {
+    margin: 7px 0;
+}
+
+.logo{
+    font-size: 40px;
+}
+.logo a{
+    text-decoration: none;
+    color: #000;
+}
+
+.searchinput{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    margin: 7px 0 7px 0;
+    border: none;
+   
+}
+.searchinput button{
+    border: 1px solid #ccc; 
+}
+.searchinput button:hover{
+    background-color: rgb(236, 235, 235);
+}
+.searchinput input{
+    border: 1px solid #ccc; 
+   
+}
+.contactInfo{
+    text-align: center;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.mode {
+    text-align: center;
+    margin: 7px 0 7px 0 ;
+}
+/* .mode button{
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+} */
+.separator-line{
+    height: 1px;
+    background: black;
+}
+button{
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
