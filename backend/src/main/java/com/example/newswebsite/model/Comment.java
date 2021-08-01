@@ -9,4 +9,12 @@ public class Comment {
     int likes;
     int dislikes;
     int test ;
+
+    public Comment(User username, String text, int likes, int dislikes, int test) {
+        this.username = username;
+        this.text = text;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.test = test;
+    }
 }
