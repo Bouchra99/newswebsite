@@ -8,18 +8,20 @@ body{
    
     display: flex;
     flex-direction: column;
+    width: 100vw;
 }
+
+
 
 .top{
     margin-left: 10px;
     background-color: white ;
     display: grid;
     grid-template-columns: 0.25fr 0.5fr 1.5fr 1.5fr 0.5fr;
-    width: 100%;
-   
-    
+    width: 100vw;
    
 }
+
 
 .bars {
     margin: 7px 0;
@@ -66,8 +68,9 @@ body{
     cursor: pointer;
 } */
 .separator-line{
-    height: 1px;
+    height: 2px;
     background: black;
+    width: 100vw;
 }
 button{
     background-color: transparent;

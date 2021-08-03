@@ -1,12 +1,21 @@
 
-.HCard{
-    margin:10px 10px 10px 10px ; 
+.LCard{
+    margin:10px 5px ; 
     /* background-color: red; */
     width: 50vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
   
+}
+.LCard::after{
+    content: "";
+    background-color: black;
+    border-radius: 5px;
+    height: 2px;
+    margin-top: 5px;
+    width:50vw;
+
 }
 .image img{
     width: 100%;
