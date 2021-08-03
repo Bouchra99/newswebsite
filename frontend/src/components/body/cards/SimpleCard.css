@@ -1,0 +1,25 @@
+
+.sCard{
+    display: flex; 
+    flex-direction: column;
+    padding: 5px;
+    margin:10px 10px 10px 10px ;
+    width: 45vw;
+    height: fit-content;
+    border: 1px solid rgb(112, 112, 112); 
+}
+
+.category {
+    padding: 0.5vh;
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2px;
+    background-color: rgb(112, 112, 112);
+    color: white;
+}
+.title{
+    font-size: 30px;
+}
+.preview{
+    line-height: 4vh;
+}
