@@ -4,8 +4,9 @@
     flex-direction: column;
     padding: 5px;
     margin:10px 5px 10px 25px ;
-    width: 40vw;
-    height: fit-content;
+    width: 25vw;
+    height: 35vh;
+    line-height: 25px;
     /* border: 1px solid rgb(112, 112, 112);  */
 }
 .sCard::after{
@@ -17,16 +18,20 @@
 }
 
 .category {
-    padding: 0.5vh;
-    width: fit-content;
-    height: fit-content;
-    margin-bottom: 2px;
-    background-color: rgb(112, 112, 112);
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 35px;
+    height: 25px;
+    margin: 1px 1px;
+    background-color: rgb(163, 162, 162);
     color: white;
 }
-.title{
-    font-size: 30px;
+.sTitle{
+    font-size: 15px;
 }
-.preview{
-    line-height: 4vh;
+.sPreview{
+    /* line-height: 4vh; */
+    font-size: 13px;
+    line-height: 20px;
 }

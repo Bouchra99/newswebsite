@@ -2,7 +2,7 @@
 .LCard{
     margin:10px 5px ; 
     /* background-color: red; */
-    width: 50vw;
+    width: 65vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -14,13 +14,20 @@
     border-radius: 5px;
     height: 2px;
     margin-top: 5px;
-    width:50vw;
+    width:65vw;
 
 }
 .image img{
     width: 100%;
     height:100%;
 }
-.title{
-    font-size: 30px;
+.lTitle{
+    font-size: 25px;
+    margin: 10px 0;
+   
+}
+.lPreview{
+    line-height: 25px;
+    font-size: 18px;
+
 }

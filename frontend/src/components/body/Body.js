@@ -4,6 +4,7 @@ import LargeCard from './cards/LargeCard'
 import MediumCard from './cards/MediumCard'
 import './Body.css'
 import image1 from '../../map.jpg'
+import image2 from '../../fatima.jpg'
 import {useEffect, useState} from 'react'; 
 
 
@@ -32,17 +33,29 @@ const Body = () => {
  
             <div className ="div1">
               { typeof articles !== "undefined" ? 
-              <SimpleCard category ="ND" title = {articles[0].title} preview ={articles[0].preview} /> : console.log("wait")}
+              <SimpleCard category ={articles[0].category} title = {articles[0].title} preview ={articles[0].preview} /> : console.log("wait")}
             </div>
             <div className ="div2">
             { typeof articles !== "undefined" ? 
               <LargeCard image ={<img src = {image1} />} title = {articles[1].title} preview ={articles[1].preview} /> : console.log("wait")}
             
             </div>
-            <div className ="div3"></div>
-            <div className ="div4"></div>
-            <div className ="div5"></div>
-            <div className ="div6"></div>
+            <div className ="div3">
+            { typeof articles !== "undefined" ? 
+              <SimpleCard category ={articles[2].category} title = {articles[2].title} preview ={articles[2].preview} /> : console.log("wait")}
+            </div>
+            <div className ="div4">
+            { typeof articles !== "undefined" ? 
+              <SimpleCard category ={articles[3].category} title = {articles[3].title} preview ={articles[3].preview} /> : console.log("wait")} 
+            </div>
+            <div className ="div5">
+            { typeof articles !== "undefined" ? 
+              <SimpleCard category ={articles[4].category} title = {articles[4].title} preview ={articles[4].preview} /> : console.log("wait")}
+            </div>
+            <div className ="div6">
+            { typeof articles !== "undefined" ? 
+              <MediumCard image ={<img src = {image2} />}  category ={articles[5].category} title = {articles[5].title} preview ={articles[5].preview} /> : console.log("wait")}
+            </div>
             <div className ="div7"></div>
             <div className ="div8"></div>
             <div className ="div9"></div>

@@ -6,8 +6,8 @@ const MediumCard = (props) => {
     return (
         <div className="MCard">
            <div className="image">{props.image}</div>
-           <div className="title"><b>{props.title}</b></div> 
-           <div className="preview">{props.preview}... <a href="">learn more</a></div>     
+           <div className="mTitle"><b>{props.title}</b></div> 
+           <div className="mPreview">{props.preview}... <a href="">learn more</a></div>     
         </div>
     )
 }
