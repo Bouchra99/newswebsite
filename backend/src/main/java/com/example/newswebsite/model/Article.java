@@ -24,6 +24,8 @@ public class Article {
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name="Author_Id")
     private Author author;
+    @Column(scale = 5)
+    private String category;
 
 //    @ManyToMany(cascade = {CascadeType.ALL})
 //    Comment comments ;
@@ -32,10 +34,19 @@ public class Article {
     public Article() {
     }
 
-    public Article( String title, String preview, String text) {
+    public Article( String category, String title, String preview, String text) {
+        this.category = category ;
         this.title = title;
         this.preview = preview;
         this.text = text;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Long getId() {
