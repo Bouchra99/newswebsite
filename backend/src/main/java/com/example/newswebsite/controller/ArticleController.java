@@ -24,15 +24,17 @@ public class ArticleController{
         List<Article> listOfArticles = articleService.findAllArticles();
         return ResponseEntity.ok(listOfArticles);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getArticleById(@PathVariable Long id){
+        Article article = articleService.findArticleById(id);
+        return ResponseEntity.ok(article);
+    }
 
 //    @GetMapping
 //    List<Article> getArticles(){
 //        return articleService.findAllArticles();
 //    }
-//    @GetMapping("/{id}")
-//    public Article getArticleById(@PathVariable Long id){
-//        return articleService.findArticleById(id);
-//    }
+
 
 }
 

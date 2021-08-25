@@ -84,41 +84,10 @@ public class BootStrapData implements CommandLineRunner {
         articleRepository.save(article4);
         articleRepository.save(article5);
         articleRepository.save(article6);
-//        articleRepository.save(article7);
-//        articleRepository.save(article8);
-//        articleRepository.save(article9);
-//        articleRepository.save(article10);
-//        articleRepository.save(article11);
-//        articleRepository.save(article12);
-//        articleRepository.save(article13);
-//        articleRepository.save(article14);
 
-
-
-//        Author author = new Author("bouch","MH");
-
-//        article1.setAuthor(author1);
-//        article2.setAuthor(author1);
-//        author1.getArticles().add(article1);
-//        author1.getArticles().add(article2);
-
-
-
-//        authorRepository.save(author1);
 
         System.out.println("articles saved "+articleRepository.count());
         System.out.println("authors saved "+authorRepository.count());
-//
-//        User user = new User("bouch","123456");
-//        User user2 = new User("bouch2","1234565");
-//        User user3 = new User("bouch3","4445554");
-//
-//        userRepository.save(user);
-//        userRepository.save(user2);
-//        userRepository.save(user3);
-//
-//        System.out.println("users saved "+userRepository.count());
-
 
     }
 }
