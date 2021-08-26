@@ -1,13 +1,17 @@
 import React from 'react'
 import './Navbar.css'
+import {Link, BrowserRouter as Router} from 'react-router-dom'
+
+
 const Navbar = () => {
     return (
+   
         <div className="navbar">
-            <div><a href=''>Society</a></div>
-            <div><a href=''>Politic</a></div>
-            <div><a href=''>Sport</a></div>
+            <button><Link to='/society'>Society</Link></button>
+            <button><Link to='/politic'>Politic</Link></button>
+            <button><Link to='/sport'>Sport</Link></button>
         </div>
-
+  
         )
 }
 

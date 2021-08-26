@@ -2,17 +2,21 @@
 import SimpleCard from './cards/SimpleCard'
 import LargeCard from './cards/LargeCard'
 import MediumCard from './cards/MediumCard'
+import Article from './article/Article'
+
 import './Body.css'
 import image1 from '../../map.jpg'
 import image2 from '../../fatima.jpg'
 import {useEffect, useState} from 'react'; 
+import { render } from '@testing-library/react'
 
 
 
 const Body = () => {
     
     const[articlesList,setArticlesList] = useState(null)
-   
+    
+  
     useEffect( ()=> {
     console.log("here")
 
@@ -27,17 +31,19 @@ const Body = () => {
     },[articlesList])
      
     if(articlesList){  var articles = articlesList.map(a => ({...a}))}
-  
+    
+    
     return ( 
+      
         <div className="body">
  
             <div className ="div1">
               { typeof articles !== "undefined" ? 
-              <SimpleCard category ={articles[0].category} title = {articles[0].title} preview ={articles[0].preview} /> : console.log("wait")}
+              <SimpleCard category ={articles[0].category} title = {articles[1].title} preview ={articles[1].preview} /> : console.log("wait")}
             </div>
             <div className ="div2">
             { typeof articles !== "undefined" ? 
-              <LargeCard image ={<img src = {image1} />} title = {articles[1].title} preview ={articles[1].preview} /> : console.log("wait")}
+              <LargeCard image ={<img src = {image1} />} title = {articles[0].title} preview ={articles[0].preview} /> : console.log("wait")}
             
             </div>
             <div className ="div3">
@@ -75,26 +81,4 @@ const Body = () => {
 
 export default Body
 
-{/* <div className ="div1">
-          <SimpleCard  category = "sport" title ="Gold Medal for Morocco" preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-      securing Morocco’s first medal since the start of the Tokyo Summer Olympics" />
-          </div>
-          <div className ="div2"> <LargeCard  title ='Gold Medal for Morocco' image = {<img src = {image1} />} 
-          preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-          securing Morocco’s first medal since the start of the Tokyo Summer Olympics" /> </div>
-          <div className ="div3">   <SimpleCard  category = "sport" title ="Gold Medal for Morocco" preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-      securing Morocco’s first medal since the start of the Tokyo Summer Olympics" /></div>
-          <div className ="div4">   <SimpleCard  category = "sport" title ="Gold Medal for Morocco" preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-      securing Morocco’s first medal since the start of the Tokyo Summer Olympics" /></div>
-       <div className ="div5">   <SimpleCard  category = "sport" title ="Gold Medal for Morocco" preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-      securing Morocco’s first medal since the start of the Tokyo Summer Olympics" /></div>
-
-          <div className ="div6">  <MediumCard  image = {<img src = {image1} />}  title ='Gold Medal for Morocco' 
-           preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-           securing Morocco’s first medal since the start of the Tokyo Summer Olympics" /> </div> */}
-
-      {/* <SimpleCard  category = "sport" title ="Gold Medal for Morocco" preview ="The Moroccan champion broke a long olympic streak of Kenyan wins this Monday, 
-      securing Morocco’s first medal since the start of the Tokyo Summer Olympics" />
-            
-            
-            <LargeCard  title ='Gold Medal for Morocco' image = {<img src = {image1} />} /> */}          
+        
