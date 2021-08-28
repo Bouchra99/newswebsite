@@ -1,10 +1,16 @@
 import React from 'react'
-import Header from '../components/header/Header'
+import SimpleCard from '../components/cards/SimpleCard'
+import './categories.css'
+
+// import SimpleCard from '../components/cards/SimpleCard'
+
+// import {useEffect, useState} from 'react'; 
 
 const Politic = () => {
+
     return (
-        <>
-            Politic
+        < >
+        
         </>
     )
 }
