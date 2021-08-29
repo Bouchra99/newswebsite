@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import static com.example.newswebsite.repositories.ArticleRepository.getLatestArticles;
+
 
 @Service
 
@@ -21,9 +21,9 @@ public class ArticleService {
     private ArticleRepository articleRepository;
 
 
-//    public ArticleService(ArticleRepository articleRepository) {
-//        this.articleRepository = articleRepository;
-//    }
+    public ArticleService(ArticleRepository articleRepository) {
+        this.articleRepository = articleRepository;
+    }
 
     public Article findArticleById(Long Id){
         return  articleRepository.findById(Id).get();
@@ -36,14 +36,14 @@ public class ArticleService {
         return getLatestArticles();
     }
 
-//    public List<Article> getLatestArticles(){
-//        List<Article> latestArticles = new ArrayList<>();
-//        Long i = (Long)articleRepository.count();
-//
-//        for(Long j=i ; j> (i-12) ;i--){
-//            latestArticles.add(findArticleById(j));
-//        }
-//        return latestArticles ;
-//    }
+    public List<Article> getLatestArticles(){
+        List<Article> latestArticles = new ArrayList<>();
+        Long i = (Long)articleRepository.count();
+
+        for(Long j=i ; j> (i-12) ;i--){
+            latestArticles.add(findArticleById(j));
+        }
+        return latestArticles ;
+    }
 
 }

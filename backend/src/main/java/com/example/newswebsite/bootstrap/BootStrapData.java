@@ -77,13 +77,21 @@ public class BootStrapData implements CommandLineRunner {
                         "Fatima Regragui has long been recognized as a prominent figure in Moroccan art, entertainment, and culture."+
                         "Director Amin Ensour commented on the passing, through a post on his personal account on Facebook and saying 'the great artist Fatima Regragui is in the protection of God, may God’s mercy on her.'"+
                         "Fans and friends of director Amin Nsour immediately sent their condolences and prayers for the late artist.");
-
+        Article article7 = new Article("Sport","Lionel Messi set for Paris Saint-Germain debut, Kylian Mbappe in squad to face Reims amid Real Madrid interest",
+                "Kylian Mbappe feels he is being kept at Paris Saint-Germain against his will amid bids from Real Madrid; Lionel Messi could make debut for Ligue 1 club after leaving Barcelona; Messi has not had full pre-season having won Copa America with Argentina","");
+        Article article8 = new Article("Sport","Jose Mourinho says Cristiano Ronaldo to Man Utd is 'perfect business'",
+                "Cristiano Ronaldo is undergoing a medical in Lisbon this weekend ahead of completing a move to Manchester United on a two-year deal; watch Wolves vs Man Utd live on Sky Sports Premier League from 4pm on Super Sunday; kick-off 4.30pm","");
+        Article article9 = new Article("Sport","N'Golo Kante: Chelsea midfielder aggravates ankle injury in Liverpool draw",
+                "Chelsea boss Thomas Tuchel has confirmed midfielder N'Golo Kante aggravated an existing ankle injury in Saturday's 1-1 Premier League draw with Liverpool.","");
         articleRepository.save(article1);
         articleRepository.save(article2);
         articleRepository.save(article3);
         articleRepository.save(article4);
         articleRepository.save(article5);
         articleRepository.save(article6);
+        articleRepository.save(article7);
+        articleRepository.save(article8);
+        articleRepository.save(article9);
 
 
         System.out.println("articles saved "+articleRepository.count());

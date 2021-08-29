@@ -159,14 +159,14 @@ public interface ArticleRepository extends JpaRepository<Article,Long> {
     } ;
 
 
-    public static List<Article> getLatestArticles(){
-        List<Article> latestArticles = new ArrayList<>();
-        Long i = (Long)articleRepository.count();
-
-        for(Long j=i ; j> (i-12) ;i--){
-            latestArticles.add(articleRepository.findById(j).get());
-        }
-        return latestArticles;
-    }
+//    public static List<Article> getLatestArticles(){
+//        List<Article> latestArticles = new ArrayList<>();
+//        Long i = (Long)articleRepository.count();
+//
+//        for(Long j=i ; j> (i-12) ;i--){
+//            latestArticles.add(articleRepository.findById(j).get());
+//        }
+//        return latestArticles;
+//    }
 
 }
