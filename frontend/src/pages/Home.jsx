@@ -1,54 +1,25 @@
 
 
-import {useEffect, useState} from 'react'; 
-import SimpleCard from '../components/cards/SimpleCard'
-import LargeCard from '../components/cards/LargeCard'
-import MediumCard from '../components/cards/MediumCard'
+import SimpleCard from '../components/blocks/SimpleCard'
+import LargeCard from '../components/blocks/LargeCard'
+import MediumCard from '../components/blocks/MediumCard'
 import './home.css'
 import image1 from '../map.jpg'
 import image2 from '../fatima.jpg'
-import Article from './Article';
-import Politic from './Politic';
-import { render } from '@testing-library/react';
+
+
+import Data from './data'
+
 
 
 
 const Home = () => {
-   
-  
-
-    const[articlesList,setArticlesList] = useState(null)
-    
-    useEffect( ()=> {
-    // console.log("here")
-
-    if(!articlesList){
-      fetch('http://localhost:8080/api/v2/articles').then(response=>
-      response.json()).then(listOfArticles => {
-        // console.log("list of all articles : ",listOfArticles)
-        setArticlesList(listOfArticles)
-      })
-    }
-
-    },[articlesList])
-     
-    if(articlesList){  
-      var articles = articlesList.map(a => ({...a})) 
-    }
-
-  //   if(typeof articles!=="undefined"){
-  //     console.log(articles);
-  //     for(let i=0;i<articles.length;i++){
-  //       switch(articles[i].category){
-  //          case  'Politic' : console.log("pollitic");console.log(articles[i]); break;
-  //          case 'Sport' :  console.log("sport");console.log( articles[i]); break;
-  //          case 'Society' :  console.log("society");console.log(articles[i]); break;
-  //     }
-  //   }
-  // }
+    console.log("am home");
+    let articles = Data();
+ 
 
     return ( 
-      
+        
         <div className="body">
             
             <div className ="div1">
@@ -91,6 +62,7 @@ const Home = () => {
        </div>  ) 
     }
   
+
 
 export default Home
 
