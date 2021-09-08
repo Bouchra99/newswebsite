@@ -1,8 +1,7 @@
 
 
 import SimpleCard from '../components/blocks/SimpleCard'
-import LargeCard from '../components/blocks/LargeCard'
-import MediumCard from '../components/blocks/MediumCard'
+
 import './home.css'
 import image1 from '../map.jpg'
 import image2 from '../fatima.jpg'

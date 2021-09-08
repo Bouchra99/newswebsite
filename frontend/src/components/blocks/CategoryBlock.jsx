@@ -1,5 +1,4 @@
 import './categoryBlock.css'
-import openArticle from '../../pages/openArticle'
 
 
 const CategoryBlock = (props) => {

@@ -1,5 +1,6 @@
 import './article.css'
 import { useEffect,useState } from 'react';
+import Comment from '../components/blocks/Comment';
 
 const Article = ({match}) => {
     // console.log(match)
@@ -26,6 +27,11 @@ const Article = ({match}) => {
             {/* <div className="aAuthor">{a.author}</div> */}
             {/* <div className="aImage">image</div> */}
             <div className="aText">{a.text}</div>
+            <br/><br/>
+
+            <p className="aPreview">Write a comment </p>
+            
+            <Comment/>
         </div>
     )
 }
