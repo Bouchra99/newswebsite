@@ -6,8 +6,7 @@ import MediumCard from '../components/blocks/MediumCard'
 import './home.css'
 import image1 from '../map.jpg'
 import image2 from '../fatima.jpg'
-
-
+import { Link } from 'react-router-dom'
 import Data from './data'
 
 
@@ -17,12 +16,21 @@ const Home = () => {
     console.log("am home");
     let articles = Data();
  
-
+    
+  if(typeof articles!=='undefined'){
+      var blocks = articles.map(a => 
+      <Link className="Link" to={`/article/${a.id}`}>
+        <SimpleCard category ={a.category} title = {a.title} preview ={a.preview}/>
+      </Link>
+      ) 
+  }
     return ( 
         
         <div className="body">
+          {console.log(blocks)}
+          {blocks}
             
-            <div className ="div1">
+            {/* <div className ="div1">
               { typeof articles !== "undefined" ? 
               <SimpleCard category ={articles[0].category} title = {articles[1].title} preview ={articles[1].preview} /> : console.log("wait")}
             </div>
@@ -43,11 +51,11 @@ const Home = () => {
             { typeof articles !== "undefined" ? 
               <SimpleCard category ={articles[4].category} title = {articles[4].title} preview ={articles[4].preview} /> : console.log("wait")}
             </div>
-            <div className ="div6">
+            <div className ="div6"> */}
             {/* { typeof articles !== "undefined" ? 
               <MediumCard image ={<img src = {image2} />}  category ={articles[5].category} title = {articles[5].title} preview ={articles[5].preview} /> : console.log("wait")} */}
-            </div>
-            <div className ="div7"></div>
+            {/* </div> */}
+            {/* <div className ="div7"></div>
             <div className ="div8"></div>
             <div className ="div9"></div>
             <div className ="div10"></div>
@@ -58,7 +66,7 @@ const Home = () => {
             <div className ="div15"></div>
             <div className ="div16"></div>
             <div className ="div17"></div>
-            <div className ="div18"></div>
+            <div className ="div18"></div> */}
        </div>  ) 
     }
   

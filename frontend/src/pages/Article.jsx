@@ -20,7 +20,7 @@ const Article = ({match}) => {
 
     return (
         <div className="Article">
-            {console.log(a)}
+            {/* {console.log(a)} */}
             <div className="aTitle"><b>{a.title}</b></div>
             <div className="aPreview">{a.preview}</div>
             {/* <div className="aAuthor">{a.author}</div> */}
