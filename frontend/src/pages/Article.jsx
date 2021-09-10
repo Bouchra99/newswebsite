@@ -1,6 +1,7 @@
 import './article.css'
 import { useEffect,useState } from 'react';
-import Comment from '../components/blocks/Comment';
+import AddComment from '../components/blocks/AddComment';
+import CommentList from '../components/blocks/CommentList';
 
 const Article = ({match}) => {
     // console.log(match)
@@ -18,7 +19,7 @@ const Article = ({match}) => {
     const a = await fetchItem.json();
     setItem(a)
     };
-
+    // {console.log(a)}
     return (
         <div className="Article">
             {/* {console.log(a)} */}
@@ -30,8 +31,12 @@ const Article = ({match}) => {
             <br/><br/>
 
             <p className="aPreview">Write a comment </p>
-            
-            <Comment/>
+
+            <AddComment/>
+            {/* <p className="aPreview">comments </p> */}
+
+            <CommentList/>
+
         </div>
     )
 }

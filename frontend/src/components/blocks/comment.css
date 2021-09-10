@@ -26,3 +26,44 @@ input:focus, textarea:focus{
     display: inline-block;
     background-color: rgb(216, 216, 216);
 }
+
+/* CommentList.jsx */
+.comment-list{
+    /* border:2px solid red ; */
+    border-radius: 5px;
+    /* background-color: rgb(235, 235, 235); */
+    background-color: rgb(216, 216, 216);
+    margin-top: 10px;
+    padding: 10px;
+    width : 55vw ;
+}
+/* Comment.jsx */
+
+.comment-block{
+    /* border : 2px solid red ; */
+    margin: 10px auto ;
+    padding: 10px ;
+    width : 50vw ;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+}
+.username {
+    /* display: inline; */
+    margin-bottom: 5px;
+    border-bottom: 2px solid rgb(197, 197, 197);
+    font-style: italic;
+}
+.text{
+    margin: 10px 0;
+}
+ul{
+    list-style: none;
+    /* border: 2px solid red ; */
+    text-align: end;
+}
+li{
+    display: inline;
+    margin: 10px 10px;
+}

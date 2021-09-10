@@ -16,8 +16,8 @@ public class Author {
 
 
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    Set<Article> articles = new HashSet<>();
+//    @OneToMany(cascade = {CascadeType.MERGE})
+//    Set<Article> articles = new HashSet<>();
 
     public Author() {
     }
@@ -51,11 +51,11 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public Set<Article> getArticles() {
-        return articles;
-    }
-
-    public void setArticles(Set<Article> articles) {
-        this.articles = articles;
-    }
+//    public Set<Article> getArticles() {
+//        return articles;
+//    }
+//
+//    public void setArticles(Set<Article> articles) {
+//        this.articles = articles;
+//    }
 }

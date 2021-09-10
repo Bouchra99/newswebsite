@@ -6,7 +6,7 @@ import './home.css'
 import image1 from '../map.jpg'
 import image2 from '../fatima.jpg'
 import { Link } from 'react-router-dom'
-import Data from './data'
+import Data from '../data/data'
 
 
 

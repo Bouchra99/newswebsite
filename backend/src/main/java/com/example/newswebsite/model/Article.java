@@ -3,7 +3,9 @@ package com.example.newswebsite.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 @Entity
@@ -21,14 +23,18 @@ public class Article {
     private String text;
 
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name="Author_Id")
     private Author author;
     @Column(scale = 5)
     private String category;
 
-//    @ManyToMany(cascade = {CascadeType.ALL})
-//    Comment comments ;
+
+//    @OneToMany(cascade = {CascadeType.MERGE})
+//    Set<Comment> commentsList = new HashSet<>();
+
+
+
 
 
     public Article() {
@@ -39,6 +45,16 @@ public class Article {
         this.title = title;
         this.preview = preview;
         this.text = text;
+    }
+
+    public Article(String category, String title, String preview, String text, Author author) {
+
+        this.title = title;
+        this.preview = preview;
+        this.text = text;
+        this.author = author;
+        this.category = category;
+
     }
 
     public String getCategory() {

@@ -1,5 +1,5 @@
 import './categories.css'
-import Data from './data'
+import Data from '../data/data'
 import CategoryBlock from '../components/blocks/CategoryBlock'
 import { Link } from 'react-router-dom'
 

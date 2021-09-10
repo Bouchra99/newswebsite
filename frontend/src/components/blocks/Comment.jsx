@@ -1,23 +1,17 @@
-
+import React from 'react'
 import './comment.css'
-const Comment = () => {
+const Comment = (prop) => {
     return (
-        <>
+        <div className="comment-block">
+            <div className="username">{prop.username}</div>
+            <div className="text">{prop.text}</div>
+            <ul>
+                <li><button>Like</button>  {prop.likes}</li>
+                <li><button>Dislike</button>  {prop.dislikes}</li>
+            </ul>
             
-        <form className="comment-form">
-        <div className="comment-form-fields">
-          <input placeholder="username" type="text" required ></input><br />
-          <textarea placeholder="add your comment here" rows="4" ></textarea>
         </div>
-        <div className="comment-button">
-          <button type="submit" >Post Comment</button>
-        </div>
-      </form>
-            
-        </>
     )
 }
-
-
 
 export default Comment

@@ -2,9 +2,11 @@ package com.example.newswebsite.bootstrap;
 
 import com.example.newswebsite.model.Article;
 import com.example.newswebsite.model.Author;
+import com.example.newswebsite.model.Comment;
 import com.example.newswebsite.model.User;
 import com.example.newswebsite.repositories.ArticleRepository;
 import com.example.newswebsite.repositories.AuthorRepository;
+import com.example.newswebsite.repositories.CommentRepository;
 import com.example.newswebsite.repositories.UserRepository;
 
 import org.springframework.boot.CommandLineRunner;
@@ -16,16 +18,29 @@ public class BootStrapData implements CommandLineRunner {
     private ArticleRepository articleRepository;
     private AuthorRepository authorRepository;
     private UserRepository userRepository;
+    private CommentRepository commentRepository;
 
     public BootStrapData(ArticleRepository articleRepository, AuthorRepository authorRepository,
-                         UserRepository userRepository) {
+                         UserRepository userRepository,CommentRepository commentRepository) {
         this.articleRepository = articleRepository;
         this.authorRepository = authorRepository;
         this.userRepository = userRepository;
+        this.commentRepository=commentRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
+        Author author1 = new Author("bouchra","MHAMDI");
+        Author author2 = new Author("Abdel","MHAMDI");
+
+        authorRepository.save(author1);
+        authorRepository.save(author2);
+
+        User user1 = new User("Bouchra","123333");
+        User user2 = new User ("Abdel","122222");
+
+        userRepository.save(user1);
+        userRepository.save(user2);
 
         Article article1 = new Article("Politic","Biden Team Removes Tweet Showing Divided Morocco Map",
                 "Amid Algerian declarations of a radical shift in US policy, the Biden administration removed all" +
@@ -36,7 +51,7 @@ public class BootStrapData implements CommandLineRunner {
                         "Biden shared a global map yesterday with a caption boasting about US vaccine donations after more " +
                         "than a year of vaccine hoarding. The tweet did not only make disingenuous claims about the US contribution to " +
                         "global vaccine access, it additionally showed a divided map of Morocco, claimed Crimea as Russian and neglected " +
-                        "to feature most island nations.");
+                        "to feature most island nations.",author1);
         Article article2 = new Article("Politic","Pegasus Affair: Morocco Takes Legal Action Against German Newspaper",
                 "Morocco took similar legal proceedings against other websites publishing espionage allegations against the country",
                 "Morocco has filed a lawsuit against German newspaper Suddeutsche Zeitung for promoting “false” allegations that accused Rabat of using the  Israeli Pegasus spyware."+
@@ -48,7 +63,7 @@ public class BootStrapData implements CommandLineRunner {
                 "The two NGOs spearheaded the report that accused Morocco of using the Pegasus program, an accusation that was soon repeated by other international news outlets."+
                 "Morocco filed further lawsuits on July 28, including one against French news outlet Le Monde and its director Jerome Fenoglio."+
                 "Morocco has also filed legal proceedings against Mediapart and Radio France."+
-                "At the beginning of the Pegasus claims, the Moroccan government issued a series of communiques in which it denounced the unrelenting " + "defamation campaign it has suffered at the hands of the Amnesty- and Forbidden Stories-led consortium of media organizations.");
+                "At the beginning of the Pegasus claims, the Moroccan government issued a series of communiques in which it denounced the unrelenting " + "defamation campaign it has suffered at the hands of the Amnesty- and Forbidden Stories-led consortium of media organizations.",author2);
 
         Article article3 = new Article("Politic","Morocco Denies Claims on Irregular Migration of 4 Auxiliary Forces to Ceuta",
                 "Spanish media claimed the auxiliary forces also filed for asylum in Ceuta",
@@ -83,6 +98,9 @@ public class BootStrapData implements CommandLineRunner {
                 "Cristiano Ronaldo is undergoing a medical in Lisbon this weekend ahead of completing a move to Manchester United on a two-year deal; watch Wolves vs Man Utd live on Sky Sports Premier League from 4pm on Super Sunday; kick-off 4.30pm","");
         Article article9 = new Article("Sport","N'Golo Kante: Chelsea midfielder aggravates ankle injury in Liverpool draw",
                 "Chelsea boss Thomas Tuchel has confirmed midfielder N'Golo Kante aggravated an existing ankle injury in Saturday's 1-1 Premier League draw with Liverpool.","");
+
+//        article1.setAuthor(author1);
+
         articleRepository.save(article1);
         articleRepository.save(article2);
         articleRepository.save(article3);
@@ -93,9 +111,19 @@ public class BootStrapData implements CommandLineRunner {
         articleRepository.save(article8);
         articleRepository.save(article9);
 
+        Comment comment1 = new Comment(user1,"this is my comment",12,2,article1);
+        Comment comment2 = new Comment(user2,"this is another comment",13,0,article1);
+
+        commentRepository.save(comment1);
+        commentRepository.save(comment2);
+
+
+
+
+
 
         System.out.println("articles saved "+articleRepository.count());
         System.out.println("authors saved "+authorRepository.count());
-
+        System.out.println("comments saved "+commentRepository.count());
     }
 }
