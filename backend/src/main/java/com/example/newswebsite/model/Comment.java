@@ -9,9 +9,11 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long Id;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name="Username")
-    User username;
+//    @ManyToOne(cascade = {CascadeType.MERGE})
+//    @JoinColumn(name="Username")
+//    User username;
+
+    String username;
     String text;
     int likes;
     int dislikes;
@@ -23,7 +25,14 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment( User username, String text, int likes, int dislikes,Article article) {
+    public Comment(String username, String text, int likes, int dislikes) {
+        this.username = username;
+        this.text = text;
+        this.likes = likes;
+        this.dislikes = dislikes;
+    }
+
+    public Comment(String username, String text, int likes, int dislikes, Article article) {
 
         this.username = username;
         this.text = text;
@@ -41,11 +50,11 @@ public class Comment {
         Id = id;
     }
 
-    public User getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(User username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 

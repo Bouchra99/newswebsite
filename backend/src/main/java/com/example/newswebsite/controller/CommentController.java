@@ -5,10 +5,7 @@ import com.example.newswebsite.model.Comment;
 import com.example.newswebsite.services.ArticleService;
 import com.example.newswebsite.services.CommentService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,14 +15,25 @@ import java.util.List;
 public class CommentController {
     public static final String BASE_URL = "/api/v2/comments";
     private final CommentService commentService ;
+    private final ArticleService articleService;
 
-    public CommentController(CommentService commentService) {
+    public CommentController(CommentService commentService,ArticleService articleService) {
         this.commentService = commentService;
+        this.articleService = articleService;
     }
 
     @GetMapping
     public ResponseEntity<?> getComments(){
-        List<Comment> listOfArticles = commentService.findAllComments();
-        return ResponseEntity.ok(listOfArticles);
+        List<Comment> listOfComments = commentService.findAllComments();
+        return ResponseEntity.ok(listOfComments);
+    }
+//    @PostMapping("/add")
+//    public Comment addComment(@RequestBody Comment comment){
+//        return commentService.addNewComment(comment);
+//    }
+    @PostMapping("/add")
+    public ResponseEntity<?> addComment(@RequestBody Comment comment){
+        Comment newComment = commentService.addNewComment(comment);
+        return ResponseEntity.ok(newComment);
     }
 }

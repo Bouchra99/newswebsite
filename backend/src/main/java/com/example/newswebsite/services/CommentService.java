@@ -20,4 +20,7 @@ public class CommentService{
     public List<Comment> findAllComments(){
         return commentRepository.findAll();
     }
+    public Comment addNewComment(Comment comment){
+        return commentRepository.save(comment);
+    }
 }

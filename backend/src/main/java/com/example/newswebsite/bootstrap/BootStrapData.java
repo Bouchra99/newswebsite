@@ -17,14 +17,13 @@ public class BootStrapData implements CommandLineRunner {
 
     private ArticleRepository articleRepository;
     private AuthorRepository authorRepository;
-    private UserRepository userRepository;
+//    private UserRepository userRepository;
     private CommentRepository commentRepository;
 
-    public BootStrapData(ArticleRepository articleRepository, AuthorRepository authorRepository,
-                         UserRepository userRepository,CommentRepository commentRepository) {
+    public BootStrapData(ArticleRepository articleRepository, AuthorRepository authorRepository,CommentRepository commentRepository) {
         this.articleRepository = articleRepository;
         this.authorRepository = authorRepository;
-        this.userRepository = userRepository;
+//        this.userRepository = userRepository;
         this.commentRepository=commentRepository;
     }
 
@@ -36,11 +35,11 @@ public class BootStrapData implements CommandLineRunner {
         authorRepository.save(author1);
         authorRepository.save(author2);
 
-        User user1 = new User("Bouchra","123333");
-        User user2 = new User ("Abdel","122222");
-
-        userRepository.save(user1);
-        userRepository.save(user2);
+//        User user1 = new User("Bouchra","123333");
+//        User user2 = new User ("Abdel","122222");
+//
+//        userRepository.save(user1);
+//        userRepository.save(user2);
 
         Article article1 = new Article("Politic","Biden Team Removes Tweet Showing Divided Morocco Map",
                 "Amid Algerian declarations of a radical shift in US policy, the Biden administration removed all" +
@@ -111,8 +110,8 @@ public class BootStrapData implements CommandLineRunner {
         articleRepository.save(article8);
         articleRepository.save(article9);
 
-        Comment comment1 = new Comment(user1,"this is my comment",12,2,article1);
-        Comment comment2 = new Comment(user2,"this is another comment",13,0,article1);
+        Comment comment1 = new Comment("user1","this is my comment",12,2);
+        Comment comment2 = new Comment("user2","this is another comment",13,0);
 
         commentRepository.save(comment1);
         commentRepository.save(comment2);
@@ -125,5 +124,6 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("articles saved "+articleRepository.count());
         System.out.println("authors saved "+authorRepository.count());
         System.out.println("comments saved "+commentRepository.count());
+//        System.out.println(comment1);
     }
 }

@@ -32,18 +32,5 @@ public class ArticleService {
     public List<Article> findAllArticles(){
         return  articleRepository.findAll();
     }
-//    public List<Article> latestNews(){
-//        return getLatestArticles();
-//    }
-//
-//    public List<Article> getLatestArticles(){
-//        List<Article> latestArticles = new ArrayList<>();
-//        Long i = (Long)articleRepository.count();
-//
-//        for(Long j=i ; j> (i-12) ;i--){
-//            latestArticles.add(findArticleById(j));
-//        }
-//        return latestArticles ;
-//    }
 
 }
