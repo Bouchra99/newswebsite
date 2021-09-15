@@ -18,29 +18,33 @@ public class Comment {
     int likes;
     int dislikes;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name="Article_Id")
-    Article article;
+//    @ManyToOne(cascade = {CascadeType.MERGE})
+//    @JoinColumn(name="Article_Id")
+//    Article article;
+
+    Long article_id ;
 
     public Comment() {
     }
 
-    public Comment(String username, String text, int likes, int dislikes) {
+    public Comment(String username, String text, int likes, int dislikes,Long article_id) {
         this.username = username;
         this.text = text;
         this.likes = likes;
         this.dislikes = dislikes;
-    }
-
-    public Comment(String username, String text, int likes, int dislikes, Article article) {
-
-        this.username = username;
-        this.text = text;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.article = article;
+        this.article_id = article_id;
 
     }
+
+//    public Comment(String username, String text, int likes, int dislikes, Article article) {
+//
+//        this.username = username;
+//        this.text = text;
+//        this.likes = likes;
+//        this.dislikes = dislikes;
+//        this.article = article;
+//
+//    }
 
     public Long getId() {
         return Id;
@@ -82,11 +86,20 @@ public class Comment {
         this.dislikes = dislikes;
     }
 
-    public Article getArticle() {
-        return article;
+//    public Article getArticle() {
+//        return article;
+//    }
+//
+//    public void setArticle(Article article) {
+//        this.article = article;
+//    }
+
+
+    public Long getArticle_id() {
+        return article_id;
     }
 
-    public void setArticle(Article article) {
-        this.article = article;
+    public void setArticle_id(Long article_id) {
+        this.article_id = article_id;
     }
 }
