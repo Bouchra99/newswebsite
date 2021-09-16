@@ -7,8 +7,8 @@ const CommentList = () => {
 
     if(typeof comment!=='undefined'){
        
-        var allComments = comment.map(a => 
-            <Comment username ={a.username.userName} text = {a.text} likes ={a.likes} dislikes={a.dislikes}/>
+        var allComments = comment.map( a=> 
+            <Comment key ={a.id} comment={a}  />
         ) 
     }
     return (

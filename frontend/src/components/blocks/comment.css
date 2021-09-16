@@ -1,8 +1,11 @@
 .comment-form {
-    border: 2px solid black; 
+    border: 2px solid rgb(216, 216, 216); 
     border-radius: 5px;
     width: 55vw;
     padding: 10px;
+}
+.comment-form:hover{
+    border: 2px solid black; 
 }
 
 input,textarea {
@@ -66,4 +69,8 @@ ul{
 li{
     display: inline;
     margin: 10px 10px;
+}
+
+.hidden-div{
+    display: none;
 }

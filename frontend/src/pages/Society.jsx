@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom'
 const Society = () => {
     
     var articles = Data()
-    if(typeof articles !=='undefined'){
-        var societyArticles = articles.filter(a =>  a.category =='Society') 
-    }
-    if(typeof societyArticles!=='undefined'){
-        var blocks = societyArticles.map(a => <Link className="Link" to={`/article/${a.id}`}><CategoryBlock title = {a.title} preview ={a.preview}/></Link>) 
+
+    if(typeof articles!=='undefined'){
+        var blocks = articles.filter(a =>  a.category =='Society').
+        map(a => <Link key={a.id} className="Link" to={`/article/${a.id}`}>
+            <CategoryBlock  article = {a} /></Link>) 
     }
     return (
         <div className="main">
