@@ -20,6 +20,9 @@ public class CommentService{
     public List<Comment> findAllComments(){
         return commentRepository.findAll();
     }
+    public Comment findCommentById(Long id){
+        return commentRepository.findById(id).get();
+    }
     public Comment addNewComment(Comment comment){
         return commentRepository.save(comment);
     }

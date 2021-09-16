@@ -32,10 +32,7 @@ public class ArticleController{
         return ResponseEntity.ok(article);
     }
 
-//    @GetMapping
-//    List<Article> getArticles(){
-//        return articleService.findAllArticles();
-//    }
+
 
 
 }

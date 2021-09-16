@@ -110,11 +110,11 @@ public class BootStrapData implements CommandLineRunner {
         articleRepository.save(article8);
         articleRepository.save(article9);
 
-//        Comment comment1 = new Comment("user1","this is my comment",12,2,article1);
-//        Comment comment2 = new Comment("user2","this is another comment",13,0,article1);
-//
-//        commentRepository.save(comment1);
-//        commentRepository.save(comment2);
+        Comment comment1 = new Comment("user1","this is my comment",0,0,article1.getId());
+        Comment comment2 = new Comment("user2","this is another comment",0,0,article1.getId());
+
+        commentRepository.save(comment1);
+        commentRepository.save(comment2);
 
 
 

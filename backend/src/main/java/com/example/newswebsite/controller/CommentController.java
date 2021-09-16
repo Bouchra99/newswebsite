@@ -15,11 +15,11 @@ import java.util.List;
 public class CommentController {
     public static final String BASE_URL = "/api/v2/comments";
     private final CommentService commentService ;
-    private final ArticleService articleService;
 
-    public CommentController(CommentService commentService,ArticleService articleService) {
+
+    public CommentController(CommentService commentService) {
         this.commentService = commentService;
-        this.articleService = articleService;
+
     }
 
     @GetMapping
@@ -27,13 +27,18 @@ public class CommentController {
         List<Comment> listOfComments = commentService.findAllComments();
         return ResponseEntity.ok(listOfComments);
     }
-//    @PostMapping("/add")
-//    public Comment addComment(@RequestBody Comment comment){
-//        return commentService.addNewComment(comment);
-//    }
+
+    // ------ add a new comment ---------------
     @PostMapping("/add")
     public ResponseEntity<?> addComment(@RequestBody Comment comment){
         Comment newComment = commentService.addNewComment(comment);
         return ResponseEntity.ok(newComment);
+    }
+
+    // ------ update likes and dislikes -------
+    @PostMapping("/update/{id}")
+    public ResponseEntity<?> updateComment(@PathVariable Long id,@RequestBody Comment comment){
+        Comment updatedComment = commentService.addNewComment(comment);
+        return  ResponseEntity.ok(updatedComment);
     }
 }
