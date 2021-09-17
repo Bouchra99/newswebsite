@@ -8,6 +8,7 @@ import Sport from './pages/Sport';
 import Politic from './pages/Politic';
 import Home from './pages/Home';
 import Article from './pages/Article';
+import Admin from './pages/Admin';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <Route axact path ='/admin' component={Admin}></Route>
           <Route exact path ='/society' component={Society}></Route>
           <Route exact path ='/politic' component={Politic}></Route>
           <Route exact path ='/sport' component={Sport}></Route>

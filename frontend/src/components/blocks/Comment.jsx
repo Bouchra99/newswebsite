@@ -1,22 +1,21 @@
 import {useState,useEffect} from 'react'
 import './comment.css'
 const Comment = (prop) => {
+    
     const comment = prop.comment ;
-
     const username = comment.username;
     const text = comment.text;
     const article_id = comment.article_id;
     const id = comment.id;
-
     const [likes, setlikes] = useState(comment.likes);
     const[dislikes,setdislikes] = useState(comment.dislikes);
 
     useEffect(() => {
         updateLikes();
     },)
-    
+
     const updateLikes=()=>{
-        console.log(likes, dislikes);
+        // console.log(likes, dislikes);
         const updatedComment = {id,username,text,likes,dislikes,article_id};
         const options = {
           method : 'POST',

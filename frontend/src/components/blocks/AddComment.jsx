@@ -1,13 +1,11 @@
 
 import './comment.css'
 import { useState } from 'react';
-import Comment from './Comment';
+
 const AddComment = (prop) => {
 
     const [username, setusername] = useState('');
     const [text, settext] = useState('');
-    // const [likes, setlikes] = useState(0);
-    // const [dislikes, setdislikes] = useState(0);
     const likes = 0 ;
     const dislikes = 0 ;
     const article_id = prop.id;
