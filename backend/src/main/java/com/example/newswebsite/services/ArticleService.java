@@ -3,12 +3,7 @@ package com.example.newswebsite.services;
 import com.example.newswebsite.model.Article;
 import com.example.newswebsite.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigurationPackage;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.CrossOrigin;
-
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 
@@ -31,6 +26,13 @@ public class ArticleService {
 
     public List<Article> findAllArticles(){
         return  articleRepository.findAll();
+    }
+
+    public Article addNewArticle(Article article){
+        return  articleRepository.save(article);
+    }
+    public void deleteOldArticle(Article article){
+        articleRepository.delete(article);
     }
 
 }

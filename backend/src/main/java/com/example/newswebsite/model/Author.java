@@ -14,8 +14,6 @@ public class Author {
     private String firstName ;
     private String lastName;
 
-
-
 //    @OneToMany(cascade = {CascadeType.MERGE})
 //    Set<Article> articles = new HashSet<>();
 
@@ -25,6 +23,7 @@ public class Author {
     public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+
     }
 
     public Long getId() {

@@ -22,6 +22,7 @@ public class CommentController {
 
     }
 
+    //------Get All comments------------------
     @GetMapping
     public ResponseEntity<?> getComments(){
         List<Comment> listOfComments = commentService.findAllComments();

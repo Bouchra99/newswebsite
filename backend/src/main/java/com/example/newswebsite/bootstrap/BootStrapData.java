@@ -70,7 +70,7 @@ public class BootStrapData implements CommandLineRunner {
                         "In a statement released today, the ministry described the news published in Spanish media as 'unfounded and fake'."+
                         "It noted that an investigation was launched after a group of Spanish news outlets published reports suggesting that four members of Morocco’s auxiliary forces had swam their way to Ceuta and filed for asylum upon reaching the Spanish enclave."+
                         "Spanish news outlet El Confidential was among the Spanish news outlets that reported the news, citing unemployment and economic crisis in Morocco as the main reasons for the apparent increase in Spain-bound irregular migration."+
-                        "In response to the claims, the Moroccan interior ministry accused the Spanish media of “misleading public opinion” with “unfounded and fake” reports.");
+                        "In response to the claims, the Moroccan interior ministry accused the Spanish media of “misleading public opinion” with “unfounded and fake” reports.",author1);
 
         Article article4 = new Article("Society","Ukraine’s SkyUp Changes Flight Attendant Uniform, Sets New Standard",
                 "Ukraine’s biggest low-cost airline, SkyUp, announced a recent dress code change for female flight attendants.",
@@ -78,25 +78,25 @@ public class BootStrapData implements CommandLineRunner {
                         "Female flight attendants are to now wear pantsuits and white Nike Air Max sneakers, instead of the customary high heels and skirts."+
                         "Uniforms for male flight attendants will remain unchanged, pending any future changes."+
                         "The new female staff’s uniform is the result of a collaboration with Ukrainian fashion brand GUDU."+
-                        "In addition to the sneakers and a loose-fitting tangerine two-piece pantsuit, flight attendants will be given the option to wear a light trench coat or a silk handkerchief.");
+                        "In addition to the sneakers and a loose-fitting tangerine two-piece pantsuit, flight attendants will be given the option to wear a light trench coat or a silk handkerchief.",author2);
         Article article5 = new Article("Society","Moroccans Among 394 Rescued Irregular Migrants near Tunisia",
                 "International NGO workers have rescued 394 irregular migrants, including many Moroccans, from a drowning vessel off the Tunisian coast on August 1.",
                 "International NGO workers have rescued 394 irregular migrants, including many Moroccans, from a drowning vessel off the Tunisian coast on August 1."+
                         "The boat was ”dangerously overcrowded,” it was “taking in water and its engine was not working,” reported Reuters. The rescue operation, which involved French NGO SOS Mediterranee, and the German NGOs Sea-Watch and ResQ Ship, occured in the early hours of Monday morning, and lasted for approximately six hours."+
                         "The French rescue ship Ocean Viking joined the German Sea-Watch 3 in rescuing the sinking vessel 68 kilometers off the Tunisian coast, in the vicinity of oil processing facilities and other commercial ships, according to Reuters."+
-                        "Sea-Watch 3 rescued 141 survivors, while the French rescue ship collected the remaining survivors. At the time of the operation, it was unclear whether any migrants died or suffered severe injuries, according to Reuters’ sources, who described the migrants ship as “crammed with migrants on deck and inside the hull.");
+                        "Sea-Watch 3 rescued 141 survivors, while the French rescue ship collected the remaining survivors. At the time of the operation, it was unclear whether any migrants died or suffered severe injuries, according to Reuters’ sources, who described the migrants ship as “crammed with migrants on deck and inside the hull.",author1);
         Article article6 = new Article("Society","Renowned Moroccan Actress Fatima Regragui Passed Away Aged 80",
                 "As a leading actress in Moroccan theater, television, and film, she belonged to a generation of pioneers in the Moroccan entertainment industry, at a time when men were reluctant to pursue the profession.",
                 "Moroccan actress Fatima Regragui passed away at 80 years old, early on Monday, August 2. The brother of the deceased confirmed the tragic news."+
                         "Fatima Regragui has long been recognized as a prominent figure in Moroccan art, entertainment, and culture."+
                         "Director Amin Ensour commented on the passing, through a post on his personal account on Facebook and saying 'the great artist Fatima Regragui is in the protection of God, may God’s mercy on her.'"+
-                        "Fans and friends of director Amin Nsour immediately sent their condolences and prayers for the late artist.");
+                        "Fans and friends of director Amin Nsour immediately sent their condolences and prayers for the late artist.",author1);
         Article article7 = new Article("Sport","Lionel Messi set for Paris Saint-Germain debut, Kylian Mbappe in squad to face Reims amid Real Madrid interest",
-                "Kylian Mbappe feels he is being kept at Paris Saint-Germain against his will amid bids from Real Madrid; Lionel Messi could make debut for Ligue 1 club after leaving Barcelona; Messi has not had full pre-season having won Copa America with Argentina","");
+                "Kylian Mbappe feels he is being kept at Paris Saint-Germain against his will amid bids from Real Madrid; Lionel Messi could make debut for Ligue 1 club after leaving Barcelona; Messi has not had full pre-season having won Copa America with Argentina","",author1);
         Article article8 = new Article("Sport","Jose Mourinho says Cristiano Ronaldo to Man Utd is 'perfect business'",
-                "Cristiano Ronaldo is undergoing a medical in Lisbon this weekend ahead of completing a move to Manchester United on a two-year deal; watch Wolves vs Man Utd live on Sky Sports Premier League from 4pm on Super Sunday; kick-off 4.30pm","");
+                "Cristiano Ronaldo is undergoing a medical in Lisbon this weekend ahead of completing a move to Manchester United on a two-year deal; watch Wolves vs Man Utd live on Sky Sports Premier League from 4pm on Super Sunday; kick-off 4.30pm","",author2);
         Article article9 = new Article("Sport","N'Golo Kante: Chelsea midfielder aggravates ankle injury in Liverpool draw",
-                "Chelsea boss Thomas Tuchel has confirmed midfielder N'Golo Kante aggravated an existing ankle injury in Saturday's 1-1 Premier League draw with Liverpool.","");
+                "Chelsea boss Thomas Tuchel has confirmed midfielder N'Golo Kante aggravated an existing ankle injury in Saturday's 1-1 Premier League draw with Liverpool.","",author1);
 
 //        article1.setAuthor(author1);
 
