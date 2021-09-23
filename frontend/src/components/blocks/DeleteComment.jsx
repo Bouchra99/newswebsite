@@ -6,6 +6,8 @@ const DeleteComment = () => {
     
     const submit=()=>{
         window.alert("submit clicked")
+        fetch(`http://localhost:8080/api/v2/admin/comment/delete/${commentID}`)
+        setCommentID('')
     }
     return (
         <div className="forms" style={{textAlign:"start"}} >

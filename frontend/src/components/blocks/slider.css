@@ -1,0 +1,26 @@
+.slider{
+    /* border : 2px solid grey ; */
+    margin : 15px auto;
+    width: 80vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 0.5fr;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 2px, rgba(22, 25, 27, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.arrow{
+    /* border : 2px solid red; */
+}
+.arrow:hover{
+    background-color: rgb(226, 225, 225)
+} 
+.content{
+    padding: 10px;
+
+}
+.content .title{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.content .preview {
+    font-size: 20px;
+}

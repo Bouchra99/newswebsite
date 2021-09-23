@@ -1,5 +1,3 @@
-import './App.css';
-
 import { BrowserRouter as Router ,Switch,Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
@@ -9,6 +7,7 @@ import Politic from './pages/Politic';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import Admin from './pages/Admin';
+import Search from './pages/Search';
 
 
 
@@ -28,6 +27,7 @@ function App() {
           <Route exact path ='/politic' component={Politic}></Route>
           <Route exact path ='/sport' component={Sport}></Route>
           <Route exact path ='/article/:id' component={Article}></Route>
+          <Route exact path ='/search' component={Search}></Route>
           <Route exact path='/' component={Home}></Route>
         </Switch>
      

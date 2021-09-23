@@ -50,7 +50,7 @@ body{
 }
 .searchinput input{
     border: 1px solid #ccc; 
-   
+    padding-left: 5px;
 }
 .contactInfo{
     text-align: center;
@@ -62,11 +62,7 @@ body{
     text-align: center;
     margin: 7px 0 7px 0 ;
 }
-/* .mode button{
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
-} */
+
 .separator-line{
     height: 2px;
     background: black;

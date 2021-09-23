@@ -1,13 +1,14 @@
 import './article.css'
 import '../components/blocks/comment.css'
 import { useEffect,useState } from 'react';
+import { useParams } from 'react-router';
 import AddComment from '../components/blocks/AddComment';
 import Comments from '../data/comments';
 import Comment from '../components/blocks/Comment'
 
-const Article = ({match}) => {
+const Article = () => {
 
-    // console.log("article id : ", match.params.id)
+    const {id} = useParams();
 
     useEffect(()=>{
         fetchItem();
@@ -17,22 +18,19 @@ const Article = ({match}) => {
     const [author, setAuthor] = useState({"firstName":"","lastName":""});
 
     const fetchItem = async () =>{
-        const fetchItem = await fetch(
-            `http://localhost:8080/api/v2/articles/
-            ${match.params.id}`)
-    
-        const article = await fetchItem.json();
+        const item = await fetch(`http://localhost:8080/api/v2/articles/${id}`);
+        const article = await item.json();
         setArticle(article);
         setAuthor(article.author);
     };
     
     const comment = Comments();
     if(typeof comment!=='undefined'){
-        var allComments = comment.filter(comment=>comment.article_id == match.params.id).map( a=> 
+        var allComments = comment.filter(comment=>comment.article_id == id).map( a=> 
             <Comment key ={a.id} comment={a}  />
         ) 
     }
-    // console.log(article);
+   
     return (
         <div className="Article">
             <div className="aTitle"><b>{article.title}</b></div>
@@ -42,7 +40,7 @@ const Article = ({match}) => {
             <br/><br/>
             <p className="aPreview">Write a comment </p>
 
-            <AddComment id ={match.params.id}/>
+            <AddComment id ={id}/>
             {console.log(allComments)}
             <div className="comment-list">{allComments}</div>
 
