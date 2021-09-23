@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping(CommentController.BASE_URL)
 @CrossOrigin(origins = "http://localhost:3000")
 public class CommentController {
-    public static final String BASE_URL = "/api/v2/comments";
+    public static final String BASE_URL = "/api/v2";
     private final CommentService commentService ;
 
 
@@ -23,23 +23,30 @@ public class CommentController {
     }
 
     //------Get All comments------------------
-    @GetMapping
+    @GetMapping("/comments")
     public ResponseEntity<?> getComments(){
         List<Comment> listOfComments = commentService.findAllComments();
         return ResponseEntity.ok(listOfComments);
     }
 
     // ------ add a new comment ---------------
-    @PostMapping("/add")
+    @PostMapping("/comments/add")
     public ResponseEntity<?> addComment(@RequestBody Comment comment){
         Comment newComment = commentService.addNewComment(comment);
         return ResponseEntity.ok(newComment);
     }
 
     // ------ update likes and dislikes -------
-    @PostMapping("/update/{id}")
+    @PostMapping("/comments/update/{id}")
     public ResponseEntity<?> updateComment(@PathVariable Long id,@RequestBody Comment comment){
         Comment updatedComment = commentService.addNewComment(comment);
         return  ResponseEntity.ok(updatedComment);
+    }
+    //------ delete comment ------------
+    @GetMapping("/admin/comment/delete/{id}")
+    public ResponseEntity<?> deleteCmnt(@PathVariable Long id){
+        Comment comment = commentService.findCommentById(id);
+        commentService.deleteComment(comment);
+        return ResponseEntity.ok(comment);
     }
 }

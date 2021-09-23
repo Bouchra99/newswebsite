@@ -1,5 +1,6 @@
 package com.example.newswebsite.services;
 
+import com.example.newswebsite.model.Article;
 import com.example.newswebsite.model.Comment;
 import com.example.newswebsite.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,8 @@ public class CommentService{
     }
     public Comment addNewComment(Comment comment){
         return commentRepository.save(comment);
+    }
+    public void deleteComment(Comment comment){
+        commentRepository.delete(comment);
     }
 }
