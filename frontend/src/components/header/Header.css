@@ -8,7 +8,7 @@ body{
    
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -16,18 +16,48 @@ body{
 .top{
     margin-left: 10px;
     background-color: white ;
-    display: grid;
-    grid-template-columns: 0.25fr 0.5fr 1.5fr 1.5fr 0.5fr;
-    width: 100vw;
+    display: flex;
+    /* grid-template-columns: 0.25fr 0.5fr 1.5fr 1.5fr 0.5fr; */
+    width: 98%;
    
 }
 
 
 .Hamburger-button {
+    flex:2%;
     margin: 7px 0;
+    visibility: hidden;
+}
+#bars{
+   
+}
+#bars:hover{
+    background-color: grey;
+}
+ .links{
+   /* border : 2px solid red ; */
+   width: 100%;
+   display: flex;
+   flex-direction: column ;
+   background-color: grey;
+
+}
+.links button{
+    /* border: 2px solid red; */
+    margin: 0;
+    padding: 5px 7px;
+}
+.links a{
+    text-decoration: none;
+  
+}
+
+.hidden{
+    display: none;
 }
 
 .logo{
+    flex:10%;
     font-size: 40px;
 }
 .logo a{
@@ -36,40 +66,107 @@ body{
 }
 
 .searchinput{
-    display: grid;
-    grid-template-columns: 9fr 1fr;
-    margin: 7px 0 7px 0;
-    border: none;
-   
-}
-.searchinput button{
-    border: 1px solid #ccc; 
-}
-.searchinput button:hover{
-    background-color: rgb(236, 235, 235);
+    flex:30%;
+    display: flex;
+    /* grid-template-columns: 9fr 0.5fr; */
+    margin: 7px 0px 7px 0;
+    border:  1px solid grey;;
+    border-radius: 5px;
 }
 .searchinput input{
-    border: 1px solid #ccc; 
+    flex:90%;
+    border-radius: 5px;
+    border: none;
     padding-left: 5px;
 }
+.searchinput button{
+    flex:10%;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+}
+.searchinput button:hover{
+    background-color: rgba(236, 235, 235, 0.7);
+
+}
 .contactInfo{
+    flex :30%;
     text-align: center;
     margin-top: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+   
+}
+.contactInfo section{
+    flex: 50%
 }
 .mode {
+    flex:2%;
     text-align: center;
     margin: 7px 0 7px 0 ;
 }
 
 .separator-line{
     height: 2px;
-    background: black;
-    width: 100vw;
+    background: rgb(124, 124, 124);
+    width: 100%;
+   
 }
 button{
     background-color: transparent;
     border-color: transparent;
     cursor: pointer;
+}
+
+@media (max-width: 1000px){
+    br{
+        display: none;
+    }
+    #links{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:51px;
+        left: 0;
+        height: fit-content;
+        width: 100%;
+        background-color: black;
+       
+    }
+    #links a{
+       
+        text-decoration: none;
+        text-align: center;
+        
+    }
+    #links a button{
+        padding: 10px 5px;
+        font-size: 15px;
+        width: 98%;
+        margin: 7px 5px;
+        border-radius: 2px;
+        border: 2px solid white;
+        color: white;
+
+    }
+    #links a button:hover{
+        background-color: rgb(71, 71, 71);
+        font-weight: bold;
+    }
+   
+   
+    .bottom{
+        display: none;
+    }
+    .logo{
+        text-align: center;
+        font-size: 40px;
+    }
+    .searchinput{
+        display: none;
+    }
+    .Hamburger-button {
+        visibility: visible;
+    }
+    .contactInfo{
+        display: none;
+    }
 }

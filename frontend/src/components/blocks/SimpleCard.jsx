@@ -7,6 +7,7 @@ const SimpleCard = (prop) => {
     return (
         <div className ="sCard">
             <div className ="category">{article.category}</div>
+           
             <div className ="sTitle"><b>{article.title}</b></div>
             <div className ="sPreview">{article.preview}</div>
         </div>

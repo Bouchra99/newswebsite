@@ -1,21 +1,35 @@
 .slider{
-    /* border : 2px solid grey ; */
     margin : 15px auto;
     width: 80vw;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: 0.5fr 5fr 0.5fr;
+    min-height: 80vh;
+    max-height: fit-content;
+    display:flex;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px 2px, rgba(22, 25, 27, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
-.arrow{
-    /* border : 2px solid red; */
-}
-.arrow:hover{
-    background-color: rgb(226, 225, 225)
-} 
-.content{
-    padding: 10px;
 
+.arrow{
+    flex: 10%;
+}
+
+.arrow #left:hover{
+    transform: translate(-5px);
+}
+.arrow #right:hover{
+    transform: translate(5px);
+}
+a{
+    flex:90%;
+}
+.content{ 
+    padding: 10px;
+    min-height: 76vh;
+    max-height: fit-content;
+    background-color: rgba(236, 235, 235, 0.7);
+}
+
+.slider a{
+    color: black;
+    text-decoration: none;
 }
 .content .title{
     font-size: 30px;

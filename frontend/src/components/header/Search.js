@@ -2,6 +2,7 @@ import {FaSistrix} from 'react-icons/fa'
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Data from '../../data/data'
+import './Header.css'
 
 
 const Search = () => {
@@ -31,7 +32,7 @@ const Search = () => {
                 onChange = {(e)=>setSearch(e.target.value)}
             >   
             </input>
-           <Link to={`/search` } ><button onClick={searching} ><FaSistrix /></button></Link>
+           <Link to={`/search` } ><button onClick={searching} ><FaSistrix size={20} /></button></Link>
             
         </div>
     )

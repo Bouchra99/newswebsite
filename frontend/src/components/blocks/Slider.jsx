@@ -2,6 +2,7 @@ import './slider.css'
 import './categoryBlock.css'
 import {FaArrowCircleLeft,FaArrowCircleRight} from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 
 const Content = (prop)=> {
@@ -15,7 +16,7 @@ const Content = (prop)=> {
     )
 }
 const Slider = () => {
-   
+
     const [content,setContent]=useState([{"title":"","preview":""}]);
     const[counter,setCounter]=useState(0);
 
@@ -31,27 +32,29 @@ const Slider = () => {
         
     }, [])
 
-    console.log("content", content)
+   
     
 
     const gotoprevious = ()=>{
         counter > 0  ? setCounter(counter-1) : setCounter(content.length-1);
     }
-    
+
     const gotonext = ()=>{
         counter < content.length-1 ?  setCounter(counter+1) : setCounter(0);
     }
 
     return (
         <div className="slider">
-            <button className="arrow" onClick={gotoprevious} id="left">
-                <FaArrowCircleLeft size={25}/>
+            <button className="arrow" onClick={gotoprevious}>
+                <FaArrowCircleLeft  id="left" size={25}/>
             </button>
-            <div className="content" >
-             <Content content={content[counter]}/>
-            </div>
-            <button className="arrow" id="right">
-                <FaArrowCircleRight onClick={gotonext} size={25}/>
+            <Link to={`/article/${content[counter].id}`}>   
+                <div className="content" >
+                    <Content content={content[counter]}/>
+                </div>
+            </Link>
+            <button className="arrow" >
+                <FaArrowCircleRight id="right" onClick={gotonext} size={25}/>
             </button> 
             
         </div>

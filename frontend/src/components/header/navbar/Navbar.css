@@ -2,22 +2,22 @@
 .navbar {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    /* column-gap: 1px; */
     text-align: center;
     line-height: 30px;
-    margin : 0px 1px ;
-    /* background-color: red; */
+    margin : 5px 1px ;  
     height: 30px;
     
 }
+.navbar button{
+    background-color: rgba(236, 235, 235, 0.7);
+    border: 2px solid white;
+}
 
-/* .navbar div{
-        border :1px solid #ccc;  
-    
-} */
 .navbar button:hover{
-    background-color: rgb(236, 235, 235);
+    background-color: rgb(216, 216, 216);
     cursor: pointer;
+    color: white;
+
 }
 .navbar a{
     text-decoration: none;
