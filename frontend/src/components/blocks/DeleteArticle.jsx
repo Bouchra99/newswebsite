@@ -1,4 +1,4 @@
-import '../../pages/admin.css'
+import '../../styles/admin.css'
 import { useState } from 'react';
 
 const DeleteArticle = () => {
@@ -29,7 +29,7 @@ const DeleteArticle = () => {
             </div>
            
             <div>
-            <button onClick={submit} className="update-articles" style={{backgroundColor:"black",width:"10%"}}>Submit</button>
+            <button onClick={submit} className="update-articles submit" style={{width:"10%"}}>Submit</button>
             </div>
 
         </div>

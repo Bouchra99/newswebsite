@@ -1,5 +1,5 @@
-import './slider.css'
-import './categoryBlock.css'
+import '../../styles/slider.css'
+import '../../styles/categoryBlock.css'
 import {FaArrowCircleLeft,FaArrowCircleRight} from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'

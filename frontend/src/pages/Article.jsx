@@ -1,5 +1,4 @@
-import './article.css'
-import '../components/blocks/comment.css'
+import '../styles/article.css'
 import { useEffect,useState } from 'react';
 import { useParams } from 'react-router';
 import AddComment from '../components/blocks/AddComment';
@@ -32,19 +31,25 @@ const Article = () => {
     }
    
     return (
-        <div className="Article">
+        
+        <div className="article">
             <div className="aTitle"><b>{article.title}</b></div>
             <div className="aPreview">{article.preview}</div>
+
             {/* <div className="aAuthor">By : {author.firstName} {author.lastName}</div> */}
+
             <div className="aText">{article.text}</div>
+
             <br/><br/>
+
             <p className="aPreview">Write a comment </p>
 
             <AddComment id ={id}/>
-            {console.log(allComments)}
+
             <div className="comment-list">{allComments}</div>
 
         </div>
+        
     )
 }
 

@@ -1,4 +1,4 @@
-import './categoryBlock.css'
+import '../../styles/categoryBlock.css'
 
 
 const CategoryBlock = (props) => {

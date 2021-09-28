@@ -1,5 +1,5 @@
 
-import './comment.css'
+import '../../styles/comment.css'
 import { useState } from 'react';
 
 const AddComment = (prop) => {

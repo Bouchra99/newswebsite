@@ -1,5 +1,5 @@
 
-import '../../pages/admin.css'
+import '../../styles/admin.css'
 import { useState } from "react"
 const AddArticle = () => {
     
@@ -66,7 +66,7 @@ const AddArticle = () => {
                 onChange={(e)=>setText(e.target.value)}
                 placeholder="Text">
            </textarea>
-           <button onClick={submit} className="update-articles" style={{backgroundColor:"black",width:"10%"}}>Submit</button>
+           <button onClick={submit} className="update-articles submit">Submit</button>
         </div>
     )
 }

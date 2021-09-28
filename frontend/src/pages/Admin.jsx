@@ -1,4 +1,4 @@
-import './admin.css'
+import '../styles/admin.css'
 import { useState } from 'react'
 import AddArticle from '../components/blocks/AddArticle'
 import DeleteArticle from '../components/blocks/DeleteArticle'

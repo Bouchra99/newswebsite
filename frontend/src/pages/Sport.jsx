@@ -1,7 +1,7 @@
-import './categories.css'
 import Data from '../data/data'
 import CategoryBlock from '../components/blocks/CategoryBlock'
 import { Link } from 'react-router-dom'
+import '../styles/categories.css'
 
 const Sport = () => {
     var articles = Data()

@@ -1,4 +1,4 @@
-import './categories.css'
+import '../styles/categories.css'
 import Data from '../data/data'
 import CategoryBlock from '../components/blocks/CategoryBlock'
 import { Link } from 'react-router-dom'

@@ -3,12 +3,9 @@ import {FaEnvelopeOpenText,FaPhone} from 'react-icons/fa'
 import {VscThreeBars, VscColorMode } from "react-icons/vsc"
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import './Header.css' ;
-
-import Navbar from './navbar/Navbar'; 
 import Search from './Search';
 
-const HNavBar =()=>{
+const HamburgerNav =()=>{
     const [showLinks,setShowLinks]=useState(false);
     const closeLinks=()=>{
         setShowLinks(false)
@@ -33,20 +30,40 @@ const HNavBar =()=>{
     
 
 }
+
+const Navbar = () =>{
+    return (
+   
+        <div className="navbar">
+            <button><Link to='/society'>Society</Link></button>
+            <button><Link to='/politic'>Politic</Link></button>
+            <button><Link to='/sport'>Sport</Link></button>
+        </div>
+  
+    )
+}
+
 const Header = () => {
+    
+    const[darkMode,setDarkMode]=useState(false)
+    
     return (
         <div className="header">
-            <section className ="top">
-                <HNavBar/>
+            <section className = "top">
+                <HamburgerNav/>
                 <section className="logo"><Link to="/"><b>News</b></Link></section>
                 <Search  id="search1"/>
                 <section className="contactInfo">
                     <section><FaEnvelopeOpenText/> news@contact.info</section>
                     <section><FaPhone /> +212 576******</section>
                 </section>
-                <section className ='mode'><button><VscColorMode size={28}/></button></section>
+
+                {/* -----this is hidden -------*/}
+                <section className ='hidden-mode'><button><VscColorMode size={28}/></button></section>
+                {/* --------------------------- */}
+                
             </section>
-            {/* <section className ="separator-line"></section> */}
+    
             <section className ="bottom">
                 <section><Navbar /></section>
             </section>

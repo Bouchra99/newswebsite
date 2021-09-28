@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import './comment.css'
+import '../../styles/comment.css'
 const Comment = (prop) => {
     
     const comment = prop.comment ;

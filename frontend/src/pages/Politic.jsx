@@ -1,4 +1,4 @@
-import './categories.css'
+import '../styles/categories.css'
 import CategoryBlock from '../components/blocks/CategoryBlock'
 import Data from '../data/data'
 import { Link } from 'react-router-dom'
@@ -14,9 +14,11 @@ const Politic = () => {
             <CategoryBlock  article ={a}/></Link>) 
     }
     return (
+       
         <div className="main">
             {blocks}
         </div>
+     
     )
 }
 

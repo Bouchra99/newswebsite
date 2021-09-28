@@ -2,7 +2,7 @@ import {FaSistrix} from 'react-icons/fa'
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Data from '../../data/data'
-import './Header.css'
+// import './Header.css'
 
 
 const Search = () => {

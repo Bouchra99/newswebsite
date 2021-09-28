@@ -1,6 +1,6 @@
 import SimpleCard from '../components/blocks/SimpleCard'
 import Slider from '../components/blocks/Slider'
-import './home.css'
+import '../styles/home.css'
 import { Link } from 'react-router-dom'
 import Data from '../data/data'
 

@@ -1,6 +1,5 @@
 
-import './SimpleCard.css'
-
+import '../../styles/SimpleCard.css'
 
 const SimpleCard = (prop) => {
     const article = prop.article ;

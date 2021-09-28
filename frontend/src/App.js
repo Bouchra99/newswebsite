@@ -1,3 +1,6 @@
+import './styles/header.css' 
+import './App.css' 
+
 import { BrowserRouter as Router ,Switch,Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
@@ -8,19 +11,22 @@ import Home from './pages/Home';
 import Article from './pages/Article';
 import Admin from './pages/Admin';
 import Search from './pages/Search';
-
-
+import { useState } from 'react';
+import {VscColorMode} from "react-icons/vsc"
 
 
 function App() {
-  
+
+  const[darkMode,setDarkMode]=useState(false)
 
   return (
-    
-    <div className="App">
+    <div className={darkMode?"App dark-mode":"App light-mode"}>
   
       <Router>
         <Header />
+        <div className ='mode'>
+          <button onClick={()=>setDarkMode(!darkMode)}><VscColorMode size={28}/></button>
+        </div>
         <Switch>
           <Route axact path ='/admin' component={Admin}></Route>
           <Route exact path ='/society' component={Society}></Route>
