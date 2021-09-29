@@ -10,7 +10,7 @@ import Politic from './pages/Politic';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import Admin from './pages/Admin';
-import Search from './pages/Search';
+import Results from './pages/Results';
 import { useState } from 'react';
 import {VscColorMode} from "react-icons/vsc"
 
@@ -33,7 +33,7 @@ function App() {
           <Route exact path ='/politic' component={Politic}></Route>
           <Route exact path ='/sport' component={Sport}></Route>
           <Route exact path ='/article/:id' component={Article}></Route>
-          <Route exact path ='/search' component={Search}></Route>
+          <Route exact path ='/search/:search' component={Results}></Route>
           <Route exact path='/' component={Home}></Route>
         </Switch>
      

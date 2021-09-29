@@ -1,0 +1,23 @@
+.results-container{
+    height: 100%;
+    width: 75vw;
+    margin: 20px auto;
+}
+.results-container a{
+    text-decoration: none;
+    color : var(--color-text)
+}
+.result{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin : 20px;
+    padding : 7px 10px ;
+    min-height: 10vh;
+    max-height: fit-content;
+    box-shadow: var(--color-shadow);
+    border: 1px solid var(--color-text);
+}
+.result:hover{
+    box-shadow: var(--color-shadow2);
+}

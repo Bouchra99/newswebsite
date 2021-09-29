@@ -1,25 +1,19 @@
 import {FaSistrix} from 'react-icons/fa'
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
-import Data from '../../data/data'
 // import './Header.css'
 
 
 const Search = () => {
 
-    const data = Data();
+    
     const [search, setSearch] = useState('')
-    const [result,setResult] = useState([]);
+  
    
 
     const searching =()=>{
         console.log("search clicked")
-        console.log(data);
-        
-        const res = data.map(item=>{return item.title}).filter(title => title.toLowerCase().includes(search.toLowerCase()));
-        setResult(res);
-        
-        
+        setSearch('')
     }
 
     return (
@@ -32,7 +26,10 @@ const Search = () => {
                 onChange = {(e)=>setSearch(e.target.value)}
             >   
             </input>
-           <Link to={`/search` } ><button onClick={searching} ><FaSistrix size={20} /></button></Link>
+            
+           <Link to={`/search/${search}` } >
+               <button onClick={searching} ><FaSistrix size={20} /></button>
+            </Link>
             
         </div>
     )
