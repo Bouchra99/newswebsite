@@ -1,75 +1,36 @@
 package com.example.newswebsite.model;
 
-import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-
-@Entity
+@Document
 public class Article {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column(scale = 1)
-    private String title ;
-    @Column(scale = 2)
-    private String preview;
-    @Column( length = 100000 ,scale = 3)
-    private String text;
-
-
-    @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name="Author_Id")
-    private Author author;
-    @Column(scale = 5)
+    private String id;
     private String category;
-
-
-//    @OneToMany(cascade = {CascadeType.MERGE})
-//    Set<Comment> commentsList = new HashSet<>();
-
-
-
+    private String title ;
+    private String preview;
+    private String text;
 
 
     public Article() {
     }
 
-    public Article( String category, String title, String preview, String text) {
-        this.category = category ;
+
+    public Article(String id, String category, String title, String preview, String text) {
+        this.id = id;
         this.title = title;
         this.preview = preview;
         this.text = text;
-    }
-
-    public Article(String category, String title, String preview, String text, Author author) {
-
-        this.title = title;
-        this.preview = preview;
-        this.text = text;
-        this.author = author;
-        this.category = category;
-
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
         this.category = category;
     }
 
-    public Long getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -97,13 +58,11 @@ public class Article {
         this.text = text;
     }
 
-    public Author getAuthor() {
-        return author;
+    public String getCategory() {
+        return category;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setCategory(String category) {
+        this.category = category;
     }
-
-
 }

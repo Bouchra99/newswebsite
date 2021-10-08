@@ -1,57 +1,34 @@
 package com.example.newswebsite.model;
 
-import javax.persistence.*;
 
-@Entity
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Comment {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Long Id;
+    private String id;
+    private String username;
+    private String text;
+    private int likes;
+    private int dislikes;
+    private String article_id ;
 
-//    @ManyToOne(cascade = {CascadeType.MERGE})
-//    @JoinColumn(name="Username")
-//    User username;
-
-    String username;
-    String text;
-    int likes;
-    int dislikes;
-
-//    @ManyToOne(cascade = {CascadeType.MERGE})
-//    @JoinColumn(name="Article_Id")
-//    Article article;
-
-    Long article_id ;
-
-    public Comment() {
-    }
-
-    public Comment(String username, String text, int likes, int dislikes,Long article_id) {
+    public Comment(String id, String username, String text, int likes, int dislikes, String article_id) {
+        this.id = id;
         this.username = username;
         this.text = text;
         this.likes = likes;
         this.dislikes = dislikes;
         this.article_id = article_id;
-
     }
 
-//    public Comment(String username, String text, int likes, int dislikes, Article article) {
-//
-//        this.username = username;
-//        this.text = text;
-//        this.likes = likes;
-//        this.dislikes = dislikes;
-//        this.article = article;
-//
-//    }
-
-    public Long getId() {
-        return Id;
+    public String getId() {
+        return id;
     }
 
-    public void setId(Long id) {
-        Id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -86,20 +63,12 @@ public class Comment {
         this.dislikes = dislikes;
     }
 
-//    public Article getArticle() {
-//        return article;
-//    }
-//
-//    public void setArticle(Article article) {
-//        this.article = article;
-//    }
-
-
-    public Long getArticle_id() {
+    public String getArticle_id() {
         return article_id;
     }
 
-    public void setArticle_id(Long article_id) {
+    public void setArticle_id(String article_id) {
         this.article_id = article_id;
     }
 }
+
