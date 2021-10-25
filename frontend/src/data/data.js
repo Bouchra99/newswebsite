@@ -9,12 +9,12 @@ const Data =()=> {
     useEffect( ()=> {
 
 
-    if(!articlesList){
+    // if(!articlesList){
       fetch('http://localhost:8080/api/v2/articles').then(response=>
       response.json()).then(listOfArticles => {
         setArticlesList(listOfArticles)
       })
-    }
+    // }
 
     },[articlesList])
      

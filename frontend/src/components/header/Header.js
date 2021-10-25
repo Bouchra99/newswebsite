@@ -45,8 +45,8 @@ const Navbar = () =>{
 
 const Header = () => {
     
-    const[darkMode,setDarkMode]=useState(false)
-    
+   
+   
     return (
         <div className="header">
             <section className = "top">

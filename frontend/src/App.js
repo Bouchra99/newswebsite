@@ -10,14 +10,18 @@ import Politic from './pages/Politic';
 import Home from './pages/Home';
 import Article from './pages/Article';
 import Admin from './pages/Admin';
+import Login from './pages/login';
 import Results from './pages/Results';
 import { useState } from 'react';
 import {VscColorMode} from "react-icons/vsc"
 
 
-function App() {
 
-  const[darkMode,setDarkMode]=useState(false)
+
+function App() { 
+
+  const[darkMode,setDarkMode]=useState(false);
+
 
   return (
     <div className={darkMode?"App dark-mode":"App light-mode"}>
@@ -25,10 +29,13 @@ function App() {
       <Router>
         <Header />
         <div className ='mode'>
-          <button onClick={()=>setDarkMode(!darkMode)}><VscColorMode size={28}/></button>
+          <button onClick={()=>{
+             setDarkMode(!darkMode);
+            } }><VscColorMode size={28}/></button>
         </div>
         <Switch>
           <Route axact path ='/admin' component={Admin}></Route>
+          <Route axact path ='/login' component={Login}></Route>
           <Route exact path ='/society' component={Society}></Route>
           <Route exact path ='/politic' component={Politic}></Route>
           <Route exact path ='/sport' component={Sport}></Route>
