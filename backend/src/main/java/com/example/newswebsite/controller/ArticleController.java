@@ -17,11 +17,15 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService ;
 
+
+
     // ------ Get All Articles ---------
     @GetMapping("/articles")
     public List<Article> getAllArticles(){
         return articleService.findAllArticles();
     }
+
+
 
     // ------ Get article By Id ---------
     @GetMapping("articles/{id}")
