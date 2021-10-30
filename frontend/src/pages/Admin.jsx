@@ -1,10 +1,35 @@
 import '../styles/admin.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AddArticle from '../components/blocks/AddArticle'
 import DeleteArticle from '../components/blocks/DeleteArticle'
 import DeleteComment from '../components/blocks/DeleteComment'
 
 const Admin = () => {
+
+
+    const Authorized = () =>{
+
+        const options = {
+            method: 'GET',
+            headers: {'token' : 'Bearer '+localStorage.getItem('token')},
+            mode: 'cors',
+        }
+
+        fetch('http://localhost:8080/authorized',options).then(
+            res => {
+                console.log(res.status)
+                if(res.status === 401) {
+                    window.location = '/login'
+                }
+            }
+        )
+            
+    }
+    useEffect(() => {
+       
+        Authorized()
+
+    }, [])
 
     const [form, setForm] = useState(<div className="forms">Forms</div>)
 

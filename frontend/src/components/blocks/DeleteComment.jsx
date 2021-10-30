@@ -3,10 +3,16 @@ import { useState } from "react";
 
 const DeleteComment = () => {
     const[commentID,setCommentID] = useState("");
-    
+    const options = {
+        method : 'GET',
+        mode : 'cors',
+        headers : {
+            'token' : 'Bearer '+localStorage.getItem('token')
+        }
+    }
     const submit=()=>{
         window.alert("submit clicked")
-        fetch(`http://localhost:8080/api/v2/admin/comment/delete/${commentID}`)
+        fetch(`http://localhost:8080/api/v2/admin/comment/delete/${commentID}`,options)
         setCommentID('')
     }
     return (

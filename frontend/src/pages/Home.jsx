@@ -9,6 +9,7 @@ import Data from '../data/data'
 
 const Home = () => {
   
+  
   const articles = Data();
 
   if(typeof articles!=='undefined'){

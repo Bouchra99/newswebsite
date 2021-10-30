@@ -9,14 +9,16 @@ const AddArticle = () => {
     const [text, setText] = useState("")
     const [category, setCategory] = useState("Sport");
 
-
     const submit=()=>{
         if(title!=="" && preview!=="" && text !==""){
             const newArticle ={category,title,preview,text};
             const options = {
                 method : 'POST',
                 mode : 'cors',
-                headers : {'Content-Type':'application/json'},
+                headers : {
+                    'Content-Type':'application/json',
+                    'token' : 'Bearer '+localStorage.getItem('token')
+                },
                 body: JSON.stringify(newArticle)
             }
             fetch('http://localhost:8080/api/v2/admin/add',options).then(

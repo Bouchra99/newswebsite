@@ -6,8 +6,15 @@ const DeleteArticle = () => {
 
     const submit =()=>{
         console.log(articleId);
-        
-        fetch(`http://localhost:8080/api/v2/admin/delete/${articleId}`).then(
+        const options = {
+            method : 'GET',
+            mode : 'cors',
+            headers : {
+                'token' : 'Bearer '+localStorage.getItem('token')
+            },
+
+        }
+        fetch(`http://localhost:8080/api/v2/admin/delete/${articleId}`,options).then(
             console.log("Article deleted",JSON.stringify(articleId))
             
         )
