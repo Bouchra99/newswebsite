@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 import '../../styles/comment.css'
+import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai'
 const Comment = (prop) => {
     
     const comment = prop.comment ;
@@ -9,7 +10,7 @@ const Comment = (prop) => {
     const id = comment.id;
     const [likes, setlikes] = useState(comment.likes);
     const[dislikes,setdislikes] = useState(comment.dislikes);
-
+    
     useEffect(() => {
         updateLikes();
     },)
@@ -28,6 +29,8 @@ const Comment = (prop) => {
       
         );
 
+     
+
     }
    
    
@@ -37,8 +40,8 @@ const Comment = (prop) => {
             <div className="username">{comment.username}</div>
             <div className="text">{comment.text}</div>
             <ul>
-                <li><button onClick={()=>{setlikes(likes+1);updateLikes()}} > Like {likes}</button></li>
-                <li><button onClick={()=>{setdislikes(dislikes+1);updateLikes()}}>Dislike {dislikes}</button></li>
+                <li><button onClick={()=>{setlikes(likes+1);updateLikes()}} > <AiOutlineLike size={20}/> {likes}</button></li>
+                <li><button  onClick={()=>{setdislikes(dislikes+1);updateLikes()}}><AiOutlineDislike size={20}/> {dislikes}</button></li>
             </ul>
             
         </div>

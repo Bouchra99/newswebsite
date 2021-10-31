@@ -20,17 +20,21 @@ import {VscColorMode} from "react-icons/vsc"
 
 function App() { 
 
-  const[darkMode,setDarkMode]=useState(false);
-
-
-  return (
-    <div className={darkMode?"App dark-mode":"App light-mode"}>
+  const[darkMode,setDarkMode]=useState(true);
   
+  const storedMode = localStorage.getItem('mode') 
+  
+
+  
+  return (
+    <div className={ storedMode === "true" ? "App dark-mode":"App light-mode"}>
+     
       <Router>
         <Header />
         <div className ='mode'>
           <button onClick={()=>{
-             setDarkMode(!darkMode);
+             setDarkMode(!darkMode); 
+             localStorage.setItem('mode',darkMode)
             } }><VscColorMode size={28}/></button>
         </div>
         <Switch>
