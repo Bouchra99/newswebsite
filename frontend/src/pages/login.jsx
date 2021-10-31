@@ -8,17 +8,19 @@ const Login = () => {
     const submit = () =>{
       
         if(username!=="" && password!==""){
-            const admin ={username,password};
+           const admin ={username,password};
             const options = {
                 method : 'POST',
                 mode : 'cors',
                 headers : {'Content-Type':'application/json'},
                 body: JSON.stringify(admin)
+              
             }
-            fetch('http://localhost:8080/authenticate',options).then(
+            fetch('http://localhost:8080/api/v2/authenticate',options).then(
 
-                    res=> {
-                         //console.log(res.status)
+                    res => {
+                      
+                       // console.log(res)
                         if(res.status === 401 ){
                             window.alert("invalid username or password")
                         }else if(res.status ===200 ){

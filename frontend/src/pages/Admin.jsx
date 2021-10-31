@@ -15,7 +15,7 @@ const Admin = () => {
             mode: 'cors',
         }
 
-        fetch('http://localhost:8080/authorized',options).then(
+        fetch('http://localhost:8080/api/v2/authorized',options).then(
             res => {
                 console.log(res.status)
                 if(res.status === 401) {
@@ -45,6 +45,10 @@ const Admin = () => {
         console.log("Delete clicked")
         setForm(<DeleteComment/>)
     }
+    const logout=()=>{
+       localStorage.removeItem('token')
+       window.location = '/login'
+    }
     return (    
         <div className="admin">
             <div className="buttons">
@@ -54,6 +58,11 @@ const Admin = () => {
                 
                 <p style={{textAlign:"center"}}>Manage Comments</p> 
                 <button onClick={()=>deleteComment()} className="update-articles" style={{backgroundColor:"rgb(241, 78, 78)"}}>Delete Comment</button>
+                 <br/>
+                <p style={{textAlign:"center"}}>Logout</p> 
+                <button onClick={()=>logout()} className="update-articles" style={{backgroundColor:"rgb(241, 78, 78)"}}>Logout</button>
+            
+        
             </div>
             
             {form}
