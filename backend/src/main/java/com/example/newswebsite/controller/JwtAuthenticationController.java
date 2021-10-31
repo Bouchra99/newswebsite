@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(CommentController.BASE_URL)
+//@RequestMapping(CommentController.BASE_URL)
 @CrossOrigin(origins = "http://localhost:3000")
 public class JwtAuthenticationController {
 
-    private String BASE_URL = "/api/v2";
+//    private String BASE_URL = "/api/v2";
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -31,11 +31,13 @@ public class JwtAuthenticationController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
-  //  @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-    @PostMapping("/authenticate")
+    @RequestMapping(value = "/api/v2/authenticate", method = RequestMethod.POST)
+//    @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
+        System.out.println(authenticationRequest);
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+
 
         final UserDetails userDetails = userDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
@@ -47,6 +49,7 @@ public class JwtAuthenticationController {
 
     private void authenticate(String username, String password) throws Exception {
         try {
+
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
             throw new Exception("USER_DISABLED", e);

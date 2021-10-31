@@ -28,11 +28,11 @@ public class NewswebsiteApplication {
 		SpringApplication.run(NewswebsiteApplication.class, args);
 	}
 
-	//@PostConstruct
-	//void init(){
-	//	Admin admin = new Admin("admin",passwordEncoder.encode("123"));
-
-	//	adminRepository.save(admin);
-	//}
+//	@PostConstruct
+//	void init(){
+//		Admin admin = new Admin("admin2",passwordEncoder.encode("123"));
+//
+//		adminRepository.save(admin);
+//	}
 
 }
